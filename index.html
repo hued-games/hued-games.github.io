@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="T_w2EXJyANwxEPnoW_TE5CJkhymzA61rabfFx2dR_Ts"/>
+    <title>Hued Games - Crafting Worlds, One Game at a Time</title>
+    <link rel="icon" type="image/png" href="icons/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+    <nav class="container navbar">
+        <a href="#" class="logo">
+            <img src="icons/logo.png" alt="Hued Games Logo">
+        </a>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">
+            &#9776;
+        </button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#apps" class="nav-link">Games</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Turning Ideas into Playable Worlds.</h1>
+            <p>At Hued Games, we create simple yet captivating mobile games that spark joy and challenge your skills.
+                Every title is built with passion and precision, blending creativity with playability.
+                Our mission is to craft games that are easy to pick up but hard to put down.</p>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="apps">
+        <div class="container">
+            <h2>Our Games</h2>
+            <!-- Layout 1: Grid -->
+            <div class="app-grid" id="appGrid"></div>
+            <!-- Layout 2: Slider -->
+            <div class="slider-wrapper" id="sliderWrapper">
+                <div class="slider-container">
+                    <div class="app-slider" id="appSlider"></div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-arrow prev" id="prevBtn">&#10094;</button>
+                    <button class="slider-arrow next" id="nextBtn">&#10095;</button>
+                </div>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Hued Games is an indie game studio dedicated to turning imagination into interactive
+                        experiences.
+                        We believe games should be more than just entertainment — they should spark curiosity, inspire
+                        creativity,
+                        and connect people through shared challenges and fun.<br><br>
+
+                        From casual puzzles to immersive adventures, every project we create is fueled by our love for
+                        gaming.
+                        Our design philosophy is simple: <strong>easy to learn, fun to master</strong>.
+                        Whether you’re a casual gamer or a hardcore player, we aim to craft titles that bring you back
+                        for "just one more round".<br><br>
+
+                        At Hued Games, every game is a new journey, and we invite you to join us in exploring endless
+                        possibilities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <p>Have questions, feedback, or a partnership idea? We'd love to hear from you.</p>
+                <a href="mailto:huedgames@gmail.com" class="contact-email">huedgames@gmail.com</a>
+                <div class="map-container">
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24243.23518991752!2d29.05958567055663!3d40.1921700684973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca15b2a6154f79%3A0x441442374b23e8d7!2sBursa%2C%20T%C3%BCrkiye!5e0!3m2!1sen!2s!4v1688927815432!5m2!1sen!2s"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p class="footer-text">
+            <span class="original-text">&copy; 2025 Hued Games. All Rights Reserved.</span>
+            <span class="hover-text">Lost them somewhere in the terms and conditions. If found, please return to the nearest developer. 🎮</span>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
