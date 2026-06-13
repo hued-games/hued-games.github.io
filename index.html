@@ -3,61 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hued Games - Indie mobile game studio. Crafting simple yet captivating mobile games that spark joy and challenge your skills.">
+    <meta name="keywords" content="Hued Games, mobile games, indie game studio, Android games, Math Riddles, brain games, puzzle games">
     <meta name="google-site-verification" content="pOMGxU0bpp1PWiFspCqMMlFdGKy8f0lOejvEV5mBO14"/>
     <title>Hued Games - Crafting Worlds, One Game at a Time</title>
     <link rel="icon" type="image/png" href="icons/logo.png">
+    
+    <!-- Google Fonts: Space Grotesk for Headings, Poppins for Body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-
 <body>
+
+<!-- Retro Floating Game Controller Shapes -->
+<div class="game-shape shape-triangle">▲</div>
+<div class="game-shape shape-circle">●</div>
+<div class="game-shape shape-cross">✖</div>
+<div class="game-shape shape-square">■</div>
 
 <!-- Header -->
 <header class="header">
     <nav class="container navbar">
-        <a href="#" class="logo">
+        <a href="#" class="logo" id="logoLink">
             <img src="icons/logo.png" alt="Hued Games Logo">
+            <span class="logo-text">Hued<span>Games</span></span>
         </a>
-        <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">
-            &#9776;
-        </button>
-        <ul class="nav-menu" id="navMenu">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#apps" class="nav-link">Games</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
+        <div class="nav-right">
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#apps" class="nav-link">Games</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
     </nav>
 </header>
 
 <main>
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Turning Ideas into Playable Worlds.</h1>
-            <p>At Hued Games, we create simple yet captivating mobile games that spark joy and challenge your skills.
-                Every title is built with passion and precision, blending creativity with playability.
-                Our mission is to craft games that are easy to pick up but hard to put down.</p>
+        <div class="container hero-content-wrapper">
+            <div class="hero-content fade-in-up">
+                <span class="hero-badge">🎮 Indie Game Studio</span>
+                <h1>Turning Ideas into Playable Worlds.</h1>
+                <p>At Hued Games, we create simple yet captivating mobile games that spark joy and challenge your skills. Every title is built with passion and precision, blending creativity with playability.</p>
+                <div class="hero-buttons">
+                    <a href="#apps" class="btn btn-primary">Discover Games</a>
+                    <a href="#about" class="btn btn-secondary">Our Story</a>
+                </div>
+            </div>
+            <div class="hero-graphic fade-in-up delay-1">
+                <div class="floating-console">
+                    <div class="console-screen">
+                        <div class="gameplay-mockup">
+                            <div class="score-display">Score: 404</div>
+                            <div class="bubble-grid">
+                                <span>+</span><span>-</span><span>×</span><span>÷</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-pad"></div>
+                    <div class="action-buttons">
+                        <span class="act-btn btn-y"></span>
+                        <span class="act-btn btn-x"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down-indicator">
+            <a href="#apps" aria-label="Scroll to Games">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+            </a>
         </div>
     </section>
 
     <!-- Games Section -->
-    <section id="apps">
+    <section id="apps" class="section scroll-reveal">
         <div class="container">
-            <h2>Our Games</h2>
+            <div class="section-header">
+                <h2>Our Games</h2>
+                <p>Easy to pick up, challenging to master. Click below to download directly on Google Play.</p>
+            </div>
+            
+            <!-- Featured Game Showcase (Dynamic Fallback Container for single game) -->
+            <div id="featuredGameWrapper" class="featured-game-wrapper" style="display: none;"></div>
+            
             <!-- Layout 1: Grid -->
-            <div class="app-grid" id="appGrid"></div>
+            <div class="app-grid" id="appGrid" style="display: none;"></div>
+            
             <!-- Layout 2: Slider -->
-            <div class="slider-wrapper" id="sliderWrapper">
+            <div class="slider-wrapper" id="sliderWrapper" style="display: none;">
                 <div class="slider-container">
                     <div class="app-slider" id="appSlider"></div>
                 </div>
                 <div class="slider-controls">
-                    <button class="slider-arrow prev" id="prevBtn">&#10094;</button>
-                    <button class="slider-arrow next" id="nextBtn">&#10095;</button>
+                    <button class="slider-arrow prev" id="prevBtn" aria-label="Previous Game">&#10094;</button>
+                    <button class="slider-arrow next" id="nextBtn" aria-label="Next Game">&#10095;</button>
                 </div>
                 <div class="slider-dots" id="sliderDots"></div>
             </div>
@@ -65,44 +117,69 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="section scroll-reveal">
         <div class="container">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Hued Games is an indie game studio dedicated to turning imagination into interactive
-                        experiences.
-                        We believe games should be more than just entertainment — they should spark curiosity, inspire
-                        creativity,
-                        and connect people through shared challenges and fun.<br><br>
-
-                        From casual puzzles to immersive adventures, every project we create is fueled by our love for
-                        gaming.
-                        Our design philosophy is simple: <strong>easy to learn, fun to master</strong>.
-                        Whether you’re a casual gamer or a hardcore player, we aim to craft titles that bring you back
-                        for "just one more round".<br><br>
-
-                        At Hued Games, every game is a new journey, and we invite you to join us in exploring endless
-                        possibilities.
-                    </p>
+            <div class="about-grid">
+                <div class="about-visual">
+                    <div class="arcade-cabinet">
+                        <div class="cabinet-marquee">HUED PLAY</div>
+                        <div class="cabinet-screen">
+                            <div class="retro-pixel-heart">❤️</div>
+                        </div>
+                        <div class="cabinet-joystick">
+                            <span class="stick"></span>
+                            <span class="btn-1"></span>
+                            <span class="btn-2"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content-text">
+                    <h2>About Hued Games</h2>
+                    <p>Hued Games is an indie game studio dedicated to turning imagination into interactive experiences. We believe games should be more than just entertainment — they should spark curiosity, inspire creativity, and connect people through shared challenges and fun.</p>
+                    <p>From casual puzzles to immersive adventures, every project we create is fueled by our love for gaming. Our design philosophy is simple: <strong>easy to learn, fun to master</strong>. Whether you’re a casual gamer or a hardcore player, we aim to craft titles that bring you back for "just one more round".</p>
+                    <p>At Hued Games, every game is a new journey, and we invite you to join us in exploring endless possibilities.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">1</span>
+                            <span class="stat-label">Released</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">4.8★</span>
+                            <span class="stat-label">Avg Rating</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-label">Passion</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="section scroll-reveal">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-content">
-                <p>Have questions, feedback, or a partnership idea? We'd love to hear from you.</p>
-                <a href="mailto:huedgames@gmail.com" class="contact-email">huedgames@gmail.com</a>
+            <div class="contact-card">
+                <h2>Get In Touch</h2>
+                <p>Have a game idea, feedback, or a partnership suggestion? We'd love to chat. Tap below to copy our support email.</p>
+                
+                <div class="email-copy-wrapper">
+                    <button class="contact-email" id="emailBtn" data-email="huedgames@gmail.com" title="Click to copy email">
+                        <span class="email-text">huedgames@gmail.com</span>
+                        <span class="copy-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        </span>
+                        <span class="tooltip" id="emailTooltip">Copy to clipboard</span>
+                    </button>
+                </div>
+                
                 <div class="map-container">
                     <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24243.23518991752!2d29.05958567055663!3d40.1921700684973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca15b2a6154f79%3A0x441442374b23e8d7!2sBursa%2C%20T%C3%BCrkiye!5e0!3m2!1sen!2s!4v1688927815432!5m2!1sen!2s"
                             allowfullscreen=""
                             loading="lazy"
+                            aria-label="Google Maps showing Bursa, Türkiye"
                             referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
@@ -113,11 +190,15 @@
 
 <!-- Footer -->
 <footer class="footer">
-    <div class="container">
+    <div class="container footer-content">
         <p class="footer-text">
             <span class="original-text">&copy; 2025 Hued Games. All Rights Reserved.</span>
             <span class="hover-text">Lost them somewhere in the terms and conditions. If found, please return to the nearest developer. 🎮</span>
         </p>
+        <div class="footer-links">
+            <a href="privacy/index.html" class="footer-link">Privacy Policy</a>
+            <a href="termsofuse/index.html" class="footer-link">Terms of Use</a>
+        </div>
     </div>
 </footer>
 
